@@ -28,10 +28,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VAm-BS-oQk"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iwn-YD-Neb"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -46,8 +42,14 @@
                     <navigationItem key="navigationItem" title="ToDoリスト" id="e1m-lR-Znc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SrQ-fN-0yQ">
                             <color key="tintColor" red="0.4823529411764706" green="0.32549019607843138" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addBtnAction:" destination="BYZ-38-t0r" id="Rp7-EG-JAi"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="toDoTableView" destination="a9g-d1-DcT" id="kfh-X6-6fw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
