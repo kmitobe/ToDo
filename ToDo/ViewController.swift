@@ -13,12 +13,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var toDoTableView: UITableView!
     //メンバとして、todoリストを格納する為の配列を宣言する
     var toDoList = [String]()
+    //ユーザーデフォルトインスタンスを生成
+    let userDefaults = UserDefaults.standard
     
     //フォームロードメソッド
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        //画面表示時にデータ読み込み
+        if let storedTodoList = userDefaults.array(forKey: "toDoList") as? [String]{
+            //toDoListに保存しているデータを格納する
+            toDoList.append(contentsOf: storedTodoList)
+        }
     }
     
     //テーブルビューの行数の設定
@@ -38,8 +44,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
+            //リストから削除する
             toDoList.remove(at: indexPath.row)
+            //行を削除する
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            //userDefaultsにキーを指定して配列を格納
+            self.userDefaults.set(self.toDoList, forKey: "toDoList")
         }
     }
     //Addボタンのアクション追加
@@ -57,6 +67,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 //テキストフィールドに文字列が存在した場合
                 self.toDoList.insert(textField.text!, at: 0)
                 self.toDoTableView.insertRows(at:[IndexPath(row: 0, section: 0)],with:UITableView.RowAnimation.right)
+                //userDefaultsにキーを指定して配列を格納
+                self.userDefaults.set(self.toDoList, forKey: "toDoList")
             }
 
         }
