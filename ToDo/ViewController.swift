@@ -35,6 +35,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         //生成し、設定を施したセルを戻り値として返す
         return cell
     }
+    //セルの削除機能
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            toDoList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
     //Addボタンのアクション追加
     @IBAction func addBtnAction(_ sender: UIBarButtonItem) {
         print("addボタンが押下されました")
