@@ -16,6 +16,7 @@
 		9BD94EB525E008AB0077D9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD94EB325E008AB0077D9CC /* LaunchScreen.storyboard */; };
 		9BD94EC025E008AB0077D9CC /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EBF25E008AB0077D9CC /* ToDoTests.swift */; };
 		9BD94ECB25E008AB0077D9CC /* ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94ECA25E008AB0077D9CC /* ToDoUITests.swift */; };
+		9BD94EDB25E46D080077D9CC /* DetailTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9BD94EC625E008AB0077D9CC /* ToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD94ECA25E008AB0077D9CC /* ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITests.swift; sourceTree = "<group>"; };
 		9BD94ECC25E008AB0077D9CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				9BD94EB325E008AB0077D9CC /* LaunchScreen.storyboard */,
 				9BD94EB625E008AB0077D9CC /* Info.plist */,
 				9BD94EAE25E008A80077D9CC /* ToDo.xcdatamodeld */,
+				9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD94EDB25E46D080077D9CC /* DetailTaskController.swift in Sources */,
 				9BD94EAA25E008A80077D9CC /* ViewController.swift in Sources */,
 				9BD94EA625E008A80077D9CC /* AppDelegate.swift in Sources */,
 				9BD94EA825E008A80077D9CC /* SceneDelegate.swift in Sources */,

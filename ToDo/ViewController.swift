@@ -16,7 +16,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //ユーザーデフォルトインスタンスを生成
     let userDefaults = UserDefaults.standard
     
-    //フォームロードメソッド
+    /*
+     フォームロードメソッド
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,12 +29,17 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
     }
     
-    //テーブルビューの行数の設定
+    /*
+     テーブルビューの行数の設定
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //メンバの配列の要素数で行数を設定する
         return toDoList.count
     }
-    //セルの中身を設定
+    
+    /*
+     セルの中身を設定
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //セルのオブジェクトを生成
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoItem", for: indexPath)
@@ -41,7 +48,31 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         //生成し、設定を施したセルを戻り値として返す
         return cell
     }
-    //セルの削除機能
+    
+     /*
+      セルタップイベント
+     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // タップされたセルの行番号を出力
+        print("\(indexPath.row)番目の行が選択されました。")
+        
+    }
+//    /*
+//
+//     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "itemDetail" {
+            //タップした行番号
+            if let indexPath = self.toDoTableView.indexPathForSelectedRow{
+                (segue.destination as! DetailTaskController).data = "hello"
+            }
+        }
+    }
+
+    
+    /*
+     セルの削除機能
+    */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             //リストから削除する
@@ -52,7 +83,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             self.userDefaults.set(self.toDoList, forKey: "toDoList")
         }
     }
-    //Addボタンのアクション追加
+    
+    /*
+     Addボタンのアクション追加
+    */
     @IBAction func addBtnAction(_ sender: UIBarButtonItem) {
         print("addボタンが押下されました")
         //アラートコントローラを生成タイトルとメッセージを設定して
