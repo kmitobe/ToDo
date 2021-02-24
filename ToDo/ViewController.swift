@@ -53,18 +53,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
       セルタップイベント
      */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // タップされたセルの行番号を出力
-        print("\(indexPath.row)番目の行が選択されました。")
-        
+
     }
-//    /*
-//
-//     */
+    /*
+     画面遷移（segue）の時の準備イベント
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemDetail" {
             //タップした行番号
             if let indexPath = self.toDoTableView.indexPathForSelectedRow{
-                (segue.destination as! DetailTaskController).data = "hello"
+                // タップされたセルの行番号を出力
+                print("\(indexPath.row)番目の要素:\(toDoList[indexPath.row])")
+                (segue.destination as! DetailTaskController).todoItem = toDoList[indexPath.row]
             }
         }
     }

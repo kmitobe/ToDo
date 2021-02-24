@@ -9,13 +9,15 @@
 import UIKit
 
 class DetailTaskController: UIViewController {
-
-    @IBOutlet weak var taskTextField: UITextField!//タスク表示
+    @IBOutlet weak var todoTitle: UITextField!
+    
     var data: String?
+    var todoItem: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(data)
+        print("遷移先：\(todoItem!)")
+        todoTitle.text = todoItem!
     }
 
 }
