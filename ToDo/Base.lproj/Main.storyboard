@@ -10,7 +10,7 @@
         <!--ToDoリスト-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController interfaceStyle="light" id="BYZ-38-t0r" customClass="ViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToDoList" interfaceStyle="light" id="BYZ-38-t0r" customClass="ViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,6 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoリスト" id="e1m-lR-Znc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SrQ-fN-0yQ">
                             <color key="tintColor" red="0.4823529411764706" green="0.32549019607843138" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,6 +71,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="toDoTableView" destination="a9g-d1-DcT" id="kfh-X6-6fw"/>
                     </connections>
@@ -81,17 +83,11 @@
         <!--Detail Task Controller-->
         <scene sceneID="TMU-Ne-7e8">
             <objects>
-                <viewController id="4GB-Mq-ces" customClass="DetailTaskController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToDoItem" id="4GB-Mq-ces" customClass="DetailTaskController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G3m-YZ-H9H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSg-99-ZB1">
-                                <rect key="frame" x="124" y="149" width="238" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ToDo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSw-64-yet">
                                 <rect key="frame" x="20" y="97" width="54" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,18 +95,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNB-FU-DuZ">
-                                <rect key="frame" x="15" y="154" width="70" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNB-FU-DuZ">
+                                <rect key="frame" x="29" y="152" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSg-99-ZB1">
+                                <rect key="frame" x="156" y="146" width="238" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Mtv-U6-GNb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Kmz-tP-00c"/>
+                    <navigationItem key="navigationItem" id="Kmz-tP-00c">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="5tE-dt-ZkX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GfC-l3-yet">
+                                <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="4GB-Mq-ces" eventType="touchUpInside" id="eHg-jR-HvJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="todoTitle" destination="fSg-99-ZB1" id="zBe-Hn-i4s"/>
                     </connections>

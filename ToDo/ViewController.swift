@@ -48,24 +48,21 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         //生成し、設定を施したセルを戻り値として返す
         return cell
     }
-    
-     /*
-      セルタップイベント
-     */
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    }
     /*
      画面遷移（segue）の時の準備イベント
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "itemDetail" {
+        switch segue.identifier {
+        case "itemDetail":
             //タップした行番号
             if let indexPath = self.toDoTableView.indexPathForSelectedRow{
                 // タップされたセルの行番号を出力
                 print("\(indexPath.row)番目の要素:\(toDoList[indexPath.row])")
                 (segue.destination as! DetailTaskController).todoItem = toDoList[indexPath.row]
             }
+        default:
+            print("identifierがありません")
         }
     }
 
@@ -85,7 +82,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     /*
-     Addボタンのアクション追加
+     Addボタンのアクション
     */
     @IBAction func addBtnAction(_ sender: UIBarButtonItem) {
         print("addボタンが押下されました")

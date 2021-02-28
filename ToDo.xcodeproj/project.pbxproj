@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B51E60925E9FE4D008B2052 /* alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51E60825E9FE4D008B2052 /* alert.swift */; };
 		9BD94EA625E008A80077D9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EA525E008A80077D9CC /* AppDelegate.swift */; };
 		9BD94EA825E008A80077D9CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EA725E008A80077D9CC /* SceneDelegate.swift */; };
 		9BD94EAA25E008A80077D9CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EA925E008A80077D9CC /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 		9BD94EC025E008AB0077D9CC /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EBF25E008AB0077D9CC /* ToDoTests.swift */; };
 		9BD94ECB25E008AB0077D9CC /* ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94ECA25E008AB0077D9CC /* ToDoUITests.swift */; };
 		9BD94EDB25E46D080077D9CC /* DetailTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */; };
+		9BD94EDF25E9F1AC0077D9CC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94EDE25E9F1AC0077D9CC /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B51E60825E9FE4D008B2052 /* alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alert.swift; sourceTree = "<group>"; };
 		9BD94EA225E008A80077D9CC /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD94EA525E008A80077D9CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD94EA725E008A80077D9CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		9BD94ECA25E008AB0077D9CC /* ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITests.swift; sourceTree = "<group>"; };
 		9BD94ECC25E008AB0077D9CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskController.swift; sourceTree = "<group>"; };
+		9BD94EDE25E9F1AC0077D9CC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				9BD94EA525E008A80077D9CC /* AppDelegate.swift */,
+				9BD94EDE25E9F1AC0077D9CC /* Item.swift */,
+				9B51E60825E9FE4D008B2052 /* alert.swift */,
 				9BD94EA725E008A80077D9CC /* SceneDelegate.swift */,
 				9BD94EA925E008A80077D9CC /* ViewController.swift */,
+				9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */,
 				9BD94EAB25E008A80077D9CC /* Main.storyboard */,
 				9BD94EB125E008AB0077D9CC /* Assets.xcassets */,
 				9BD94EB325E008AB0077D9CC /* LaunchScreen.storyboard */,
 				9BD94EB625E008AB0077D9CC /* Info.plist */,
 				9BD94EAE25E008A80077D9CC /* ToDo.xcdatamodeld */,
-				9BD94EDA25E46D080077D9CC /* DetailTaskController.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -266,9 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD94EDB25E46D080077D9CC /* DetailTaskController.swift in Sources */,
+				9BD94EDF25E9F1AC0077D9CC /* Item.swift in Sources */,
 				9BD94EAA25E008A80077D9CC /* ViewController.swift in Sources */,
 				9BD94EA625E008A80077D9CC /* AppDelegate.swift in Sources */,
 				9BD94EA825E008A80077D9CC /* SceneDelegate.swift in Sources */,
+				9B51E60925E9FE4D008B2052 /* alert.swift in Sources */,
 				9BD94EB025E008A80077D9CC /* ToDo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
